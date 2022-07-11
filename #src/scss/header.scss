@@ -1,0 +1,198 @@
+//====================================================================================================
+.header {
+	position: fixed;
+	z-index: 100;
+	width: 100%;
+	transition: all 1s ease 0s;
+	@include adaptiv-value("margin-top", 30, 10, 1);
+	&._scroll {
+		margin: 0px;
+		padding: 10px 0px;
+		background-color: #1382c0;
+		box-shadow: 0px 0px 20px #1382c0;
+	}
+	&__content {
+		position: relative;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+
+	&__logo {
+		position: relative;
+		z-index: 15;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		@media (min-width: $md2+px) {
+			&:hover {
+				.header__logo-text {
+					opacity: 0.5;
+				}
+			}
+		}
+	}
+
+	&__image {
+		flex: 0 0 69px;
+		margin: 0px 12px 0px 0px;
+	}
+
+	&__logo-text {
+		font-weight: 600;
+		font-size: 20px;
+		line-height: 25 / 20 * 100%;
+		letter-spacing: -0.35px;
+		color: #ffffff;
+		opacity: 1;
+		transition: all 0.5s ease 0s;
+	}
+
+	&__menu {
+		margin: 0px 20px;
+	}
+
+	&__profile {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		font-weight: 600;
+		@media (max-width: $md3+px) {
+			margin: 20px 0px 0px 0px;
+			justify-content: start;
+		}
+		@media (max-width: $md4+px) {
+			justify-content: center;
+		}
+	}
+
+	&__login {
+		@extend .text;
+		text-transform: uppercase;
+		opacity: 1;
+		@include adaptiv-value("margin-right", 43, 5, 1);
+		transition: all 0.5s ease 0s;
+		@media (min-width: $md2+px) {
+			&:hover {
+				opacity: 0.5;
+			}
+		}
+		@media (max-width: $md3+px) {
+			font-size: 20px;
+		}
+	}
+
+	&__sign {
+		@media (max-width: $md3+px) {
+			font-size: 20px;
+		}
+	}
+}
+.menu {
+	&__icon {
+	}
+
+	&__body {
+		@media (max-width: $md3+px) {
+			opacity: 0;
+			visibility: hidden;
+			padding: 80px 10px 40px 10px;
+			position: fixed;
+			z-index: 10;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			overflow: auto;
+			transition: all 0.5s ease 0s;
+			background: url("../img/bg01.png") top center no-repeat #fff;
+			&._active {
+				visibility: visible;
+				opacity: 1;
+			}
+		}
+	}
+
+	&__list {
+		display: flex;
+		align-items: center;
+		li {
+			@include adaptiv-value("margin-right", 50, 5, 1);
+			&:last-child {
+				margin: 0px 0px 0px 0px;
+			}
+		}
+		@media (max-width: $md3+px) {
+			display: block;
+			li {
+				margin: 0px 0px 10px 0px;
+			}
+		}
+		@media (max-width: $md4+px) {
+			text-align: center;
+		}
+	}
+
+	&__link {
+		@extend .text;
+		text-transform: uppercase;
+		opacity: 1;
+		transition: all 0.5s ease 0s;
+		font-weight: 600;
+		@media (min-width: $md2+px) {
+			&:hover {
+				opacity: 0.5;
+			}
+		}
+		@media (max-width: $md3+px) {
+			@media (max-width: $md3+px) {
+				font-size: 20px;
+			}
+		}
+	}
+}
+
+.icon-menu {
+	display: none;
+	@media (max-width: $md3+px) {
+		display: block;
+		position: absolute;
+		top: 0;
+		transform: translate(0px, 25%);
+		right: 10px;
+		width: 30px;
+		height: 25px;
+		cursor: pointer;
+		z-index: 15;
+		span {
+			transition: all 0.3s ease 0s;
+			top: calc(50% - 2px);
+			left: 0px;
+			position: absolute;
+			width: 100%;
+			height: 4px;
+			background-color: rgb(255, 255, 255);
+			&:first-child {
+				top: 0px;
+			}
+			&:last-child {
+				top: auto;
+				bottom: 0px;
+			}
+		}
+		&._active {
+			span {
+				transform: scale(0);
+				&:first-child {
+					transform: rotate(-45deg);
+					top: calc(50% - 2px);
+				}
+				&:last-child {
+					transform: rotate(45deg);
+					bottom: calc(50% - 2px);
+				}
+			}
+		}
+	}
+}
+//====================================================================================================
