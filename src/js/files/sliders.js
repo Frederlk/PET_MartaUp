@@ -30,7 +30,7 @@ function initSliders() {
             slidesPerView: 1,
             spaceBetween: 0,
             autoHeight: true,
-            speed: 1000,
+            speed: 500,
             effect: "fade",
             // Дополнение к fade
             fadeEffect: {
@@ -46,7 +46,7 @@ function initSliders() {
                 clickable: true,
             },
             watchOverflow: true,
-            adaptiveHeight: true,
+            autoHeight: false,
             autoplay: {
                 // Пауза между прокруткой
                 delay: 4000,
@@ -55,7 +55,6 @@ function initSliders() {
                 // Отключить после ручного переключения
                 disableOnInteraction: false,
             },
-
             loop: true,
         });
     }
