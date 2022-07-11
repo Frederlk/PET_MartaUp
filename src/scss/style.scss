@@ -51,8 +51,10 @@ $responsiveType: 1;
 @import "base/null";
 
 body {
+    overflow-y: scroll;
+    overflow-y: overlay;
     background-color: #f4f9fd;
-
+    @include scrollbars(rem(10), $primary_01, transparent);
     // Скролл заблокирован
     .lock & {
         overflow: hidden;
@@ -154,7 +156,7 @@ body {
     }
 
     &__testimonial {
-        @include adaptiveValue("padding-top", 40, 20, 1170, 479.98, 1);
-        @include adaptiveValue("padding-bottom", 82, 20, 1170, 479.98, 1);
+        @include adaptiveValue("padding-top", 40, 30, 1170, 479.98, 1);
+        @include adaptiveValue("padding-bottom", 82, 40, 1170, 479.98, 1);
     }
 }
