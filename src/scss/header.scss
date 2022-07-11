@@ -1,0 +1,201 @@
+//====================================================================================================
+.header {
+    position: fixed;
+    z-index: 100;
+    width: 100%;
+    transition: all 1s ease 0s;
+    @include adaptiveValue("margin-top", 30, 10, 1);
+    &._header-scroll {
+        margin: 0px;
+        padding: rem(10) 0px;
+        background-color: $blue_01;
+        box-shadow: 0px 0px rem(20) $blue_01;
+    }
+    &__content {
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__logo {
+        position: relative;
+        z-index: 15;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        @media (any-hover: hover) {
+            &:hover {
+                .header__logo-text {
+                    opacity: 0.5;
+                }
+            }
+        }
+    }
+
+    &__image {
+        flex: 0 0 rem(69);
+        margin-right: rem(12);
+        img {
+            max-width: 100%;
+        }
+    }
+
+    &__logo-text {
+        font-weight: 600;
+        font-size: rem(20);
+        line-height: math.div(25, 20);
+        letter-spacing: em(-0.35, 20);
+        color: $white;
+        opacity: 1;
+        transition: opacity 0.5s ease 0s;
+    }
+
+    &__menu {
+        margin: 0px rem(20);
+    }
+
+    &__profile {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-weight: 600;
+        @media (max-width: $mobile) {
+            margin-top: rem(20);
+            justify-content: start;
+        }
+        @media (max-width: $mobileSmall) {
+            justify-content: center;
+        }
+    }
+
+    &__login {
+        @extend .text;
+        text-transform: uppercase;
+        opacity: 1;
+        @include adaptiveValue("margin-right", 43, 10, 1170, 767.98, 1);
+        transition: opacity 0.5s ease 0s;
+        @media (any-hover: hover) {
+            &:hover {
+                opacity: 0.5;
+            }
+        }
+        @media (max-width: $mobile) {
+            font-size: rem(20);
+        }
+    }
+
+    &__sign {
+        @media (max-width: $mobile) {
+            font-size: rem(20);
+        }
+    }
+}
+.menu {
+    &__icon {
+    }
+
+    &__body {
+        @media (max-width: $mobile) {
+            opacity: 0;
+            visibility: hidden;
+            padding: rem(80) rem(15) rem(40) rem(15);
+            position: fixed;
+            z-index: 10;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            transition: opacity 0.5s ease 0s;
+            background: url("@img/bg01.png") top center no-repeat $white;
+            .menu-open & {
+                visibility: visible;
+                opacity: 1;
+            }
+        }
+    }
+
+    &__list {
+        @media (min-width: $mobile) {
+            display: flex;
+            align-items: center;
+        }
+    }
+
+    &__item {
+        @media (min-width: $mobile) {
+            &:not(:last-child) {
+                @include adaptiveValue("margin-right", 50, 10, 1170, 767.98, 1);
+            }
+        }
+        @media (max-width: $mobile) {
+            text-align: center;
+            &:not(:last-child) {
+                margin-bottom: rem(10);
+            }
+        }
+    }
+
+    &__link {
+        @extend .text;
+        text-transform: uppercase;
+        opacity: 1;
+        transition: opacity 0.5s ease 0s;
+        font-weight: 600;
+        @media (any-hover: hover) {
+            &:hover {
+                opacity: 0.5;
+            }
+        }
+        @media (max-width: $mobile) {
+            font-size: rem(20);
+        }
+    }
+}
+
+.icon-menu {
+    display: none;
+    @media (max-width: $mobile) {
+        display: block;
+        position: relative;
+        width: rem(30);
+        height: rem(25);
+        cursor: pointer;
+        z-index: 5;
+        span,
+        &::before,
+        &::after {
+            content: "";
+            transition: all 0.3s ease 0s;
+            right: 0;
+            border-radius: rem(10);
+            position: absolute;
+            width: 100%;
+            height: rem(4);
+            background-color: $white;
+        }
+        &::before {
+            top: 0;
+        }
+        &::after {
+            bottom: 0;
+        }
+        span {
+            top: calc(50% - rem(2));
+        }
+        .menu-open & {
+            span {
+                width: 0;
+            }
+            &::before {
+                top: calc(50% - rem(2));
+                transform: rotate(-45deg);
+            }
+            &::after {
+                bottom: calc(50% - rem(2));
+                transform: rotate(45deg);
+            }
+        }
+    }
+}

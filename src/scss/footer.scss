@@ -1,0 +1,46 @@
+.footer {
+    &__container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        min-height: rem(60);
+        @include adaptiveValue("padding-top", 20, 10, 1170, 767.98, 1);
+        @include adaptiveValue("padding-button", 17, 10, 1170, 767.98, 1);
+        @media (max-width: $mobile) {
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+    }
+
+    &__list {
+        display: flex;
+        align-items: center;
+        margin: 0px rem(30);
+        li {
+            margin: 0px rem(10);
+        }
+        @media (max-width: $mobile) {
+            flex: 1 1 100%;
+            justify-content: center;
+            li {
+                margin: 0px rem(10);
+            }
+        }
+    }
+
+    &__link {
+        @extend .text;
+        color: $dark_02;
+    }
+
+    &__copy {
+        @media (max-width: $mobile) {
+            flex: 1 1 100%;
+            margin: 0;
+            text-align: center;
+        }
+        @extend .text;
+        color: $dark_02;
+        margin-right: rem(45);
+    }
+}

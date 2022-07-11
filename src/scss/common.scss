@@ -1,0 +1,12 @@
+.text {
+    @include adaptiveValue("font-size", 15, 18, 767.98, 479.98, 1);
+    line-height: math.div(24, 15);
+    color: $white;
+}
+
+.title {
+    font-weight: 700;
+    @include adaptiveValue("font-size", 35, 30, 767.98, 479.98, 1);
+    line-height: math.div(45, 35);
+    color: $dark_01;
+}
