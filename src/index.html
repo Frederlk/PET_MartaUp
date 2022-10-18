@@ -1,137 +1,256 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Верстка «NEW_PROJECT_NAME»</title>
-    </head>
-    <body>
-        <div class="rootpage">
-            <h1>«NEW_PROJECT_NAME»</h1>
-            <div class="rootpage__info">Project Features</div>
-            <h2>Pages:</h2>
-            <ol class="rootpage__list">
-                <li><a target="_blank" href="home.html">Home Page</a></li>
-            </ol>
-            <div class="rootpage__contacts">
-                <h2>My contacts:</h2>
-                <p>Email: <a href="mailto:pertrinichshadow@gmail.com">pertrinichshadow@gmail.com</a></p>
-                <p>Phone: <a href="tel:375256474526">+375256474526</a></p>
-                <p>Social network: <a href="">Link to social network</a></p>
-            </div>
-        </div>
-    </body>
-    <style>
-        @charset "UTF-8";
-        @import url("https://fonts.googleapis.com/css?family=Montserrat:regular,700&display=swap");
-        *,
-        *::before,
-        *::after {
-            padding: 0px;
-            margin: 0px;
-            border: 0px;
-            box-sizing: border-box;
-        }
-        html,
-        body {
-            height: 100%;
-            margin: 0;
-            padding: 0;
-            min-width: 320px;
-            width: 100%;
-            color: #fff;
-            background-color: #5e5373;
-        }
-        body {
-            font-family: Montserrat;
-            font-size: 100%;
-            line-height: 1;
-            font-size: 1rem;
-        }
-        a {
-            text-decoration: underline;
-            color: #ebe691;
-        }
-        a:visited {
-            text-decoration: underline;
-            color: #aaa768;
-        }
-        a:hover {
-            text-decoration: none;
-        }
-        ul li {
-            list-style: none;
-        }
-        img {
-            vertical-align: top;
-        }
-        .wrapper {
-            width: 100%;
-            min-height: 100%;
-            overflow: hidden;
-        }
-        .rootpage {
-            padding: 30px;
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-        }
-        @media (max-width: 767px) {
-            .rootpage {
-                padding: 30px 15px;
-            }
-        }
-        h1 {
-            color: #ebe691;
-            font-size: 2.5rem;
-            margin: 0px 0px 1.25rem 0px;
-        }
-        @media (max-width: 767px) {
-            h1 {
-                font-size: 1.85rem;
-                margin: 0px 0px 1.25rem 0px;
-            }
-        }
-        h2 {
-            color: #ebe691;
-            font-size: 1.25rem;
-            margin: 0px 0px 1rem 0px;
-        }
-        @media (max-width: 767px) {
-            h2 {
-                font-size: 1.125rem;
-                margin: 0px 0px 1rem 0px;
-            }
-        }
-        .rootpage__info {
-            line-height: 140%;
-            margin: 0px 0px 1.5rem 0px;
-        }
+<html lang="en">
+    @@include('html/_head.htm',{ "title":"MartaUP" })
 
-        .rootpage__list {
-            margin: 0px 0px 2.25rem 1.25rem;
-        }
-        .rootpage__list li:not(:last-child) {
-            margin: 0px 0px 15px 0px;
-        }
-        .rootpage__contacts,
-        .rootpage__tnx {
-            border-radius: 200px;
-            padding: 20px 65px;
-            line-height: 140%;
-        }
-        @media (max-width: 767px) {
-            .rootpage__contacts,
-            .rootpage__tnx {
-                border-radius: 40px;
-                padding: 20px;
-            }
-        }
-        .rootpage__contacts {
-            background: #32b5a4;
-        }
-        .rootpage__contacts a {
-            color: #ebe691;
-        }
-    </style>
+    <body>
+        <div class="wrapper">
+            @@include('html/_header.htm',{})
+            <main class="page">
+                <section class="page__home home">
+                    <div class="home__content">
+                        <div class="home__container">
+                            <div class="home__slider swiper">
+                                <div class="home__wrapper swiper-wrapper">
+                                    <div class="home__slide swiper-slide slide-home">
+                                        <div class="slide-home__info">
+                                            <h1 class="slide-home__title">
+                                                We Build Apps & Websites for Your Business
+                                            </h1>
+                                            <p class="slide-home__subtitle">
+                                                For startups, For businesses & For you
+                                            </p>
+                                            <a href="#" class="slide-home__btn btn">Request a quote</a>
+                                        </div>
+                                        <div class="slide-home__image">
+                                            <img src="@img/home/01.svg" alt="01" />
+                                        </div>
+                                    </div>
+                                    <div class="home__slide swiper-slide slide-home">
+                                        <div class="slide-home__info">
+                                            <h2 class="slide-home__title">
+                                                We Build Apps & COOLO for Your Business
+                                            </h2>
+                                            <p class="slide-home__subtitle">
+                                                For startups, For businesses & For you
+                                            </p>
+                                            <a href="#" class="slide-home__btn btn">Request a quote</a>
+                                        </div>
+                                        <div class="slide-home__image">
+                                            <img src="@img/home/02.svg" alt="02" />
+                                        </div>
+                                    </div>
+                                    <div class="home__slide swiper-slide slide-home">
+                                        <div class="home__slide slide-home">
+                                            <div class="slide-home__info">
+                                                <h2 class="slide-home__title">
+                                                    We Build Apps & Websites for Your Business
+                                                </h2>
+                                                <p class="slide-home__subtitle">
+                                                    For startups, For businesses & For you
+                                                </p>
+                                            </div>
+                                            <div class="slide-home__image">
+                                                <img src="@img/home/01.svg" alt="01" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="home__slide swiper-slide slide-home">
+                                        <div class="home__slide slide-home">
+                                            <div class="slide-home__info">
+                                                <h2 class="slide-home__title">
+                                                    We Build Apps & COOLO for Your Business
+                                                </h2>
+                                                <a href="#" class="slide-home__btn btn">Request a quote</a>
+                                            </div>
+                                            <div class="slide-home__image">
+                                                <img src="@img/home/02.svg" alt="02" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="home__slide swiper-slide slide-home">
+                                        <div class="slide-home__info">
+                                            <h2 class="slide-home__title">
+                                                We Build Apps & COOLO for Your Business
+                                            </h2>
+                                            <p class="slide-home__subtitle">
+                                                For startups, For businesses & For you
+                                            </p>
+                                            <a href="#" class="slide-home__btn btn">Request a quote</a>
+                                        </div>
+                                        <div class="slide-home__image">
+                                            <img src="@img/home/03.svg" alt="03" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="home__pagination"></div>
+                        </div>
+                        <div class="home__bg">
+                            <img src="@img/bg01.png" alt="" />
+                        </div>
+                    </div>
+                </section>
+
+                <section class="page__special special">
+                    <div class="special__container">
+                        <h2 class="special__title title">We are specialised in</h2>
+                        <div class="special__content">
+                            <div class="special__column column-special">
+                                <div class="column-special__body">
+                                    <div class="column-special__image">
+                                        <img src="@img/special/01.svg" alt="01" />
+                                    </div>
+                                    <h3 class="column-special__title">UI/UX Design</h3>
+                                    <p class="column-special__text">
+                                        In hac habitasse platea dictumstmus adipiscing fermentum quam volutpat
+                                        aliquam. Integer cilisis tristique.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="special__column column-special">
+                                <div class="column-special__body">
+                                    <div class="column-special__image">
+                                        <img src="@img/special/02.svg" alt="02" />
+                                    </div>
+                                    <h3 class="column-special__title">Web Development</h3>
+                                    <p class="column-special__text">
+                                        In hac habitasse platea dictumstmus adipiscing fermentum quam volutpat
+                                        aliquam.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="special__column column-special">
+                                <div class="column-special__body">
+                                    <div class="column-special__image">
+                                        <img src="@img/special/03.svg" alt="03" />
+                                    </div>
+                                    <h3 class="column-special__title">App Development</h3>
+                                    <p class="column-special__text">
+                                        In hac fggv aookf habitasse platea dictumstmus adipiscing fermentum
+                                        quam volutpat aliquam. Integer cilisis tristique.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="page__content content">
+                    <div class="content__container">
+                        <div class="content__row content__row_1">
+                            <div class="content__info">
+                                <h3 class="content__title title">Experienced Designers & Developers</h3>
+                                <p class="content__text">
+                                    Nam dapibus nisl vitae elit fringilla rutrum. Aenean sollicitudin, erat a
+                                    elementum rutrum, neque sem pretium metus, quis mollis nisl nunc et massa.
+                                </p>
+                                <p class="content__text">
+                                    Vestibulum sed metus in lorem tristique ullamcorper id vitae erat.
+                                </p>
+                            </div>
+                            <div class="content__image">
+                                <img src="@img/content/01.svg" alt="01" />
+                            </div>
+                        </div>
+                        <div class="content__row content__row_2">
+                            <div class="content__info">
+                                <h3 class="content__title title">
+                                    Information Architect & Visual Prototyping
+                                </h3>
+                                <p class="content__text">
+                                    Nam dapibus nisl vitae elit fringilla rutrum. Aenean sollicitudin, erat a
+                                    elementum rutrum, neque sem pretium metus, quis mollis nisl nunc et massa.
+                                </p>
+                                <p class="content__text">
+                                    Vestibulum sed metus in lorem tristique ullamcorper id vitae erat. Nulla
+                                    mollis sapien sollicitudin lacinia lacinia. Nam dapibus nisl vitae elit
+                                    fringilla rutrum. Aenean sollicitudin, erat a elementum rutrum, neque sem
+                                    pretium metus, quis mollis nisl nunc et massa
+                                </p>
+                            </div>
+                            <div class="content__image">
+                                <img src="@img/content/02.svg" alt="02" />
+                            </div>
+                        </div>
+                        <div class="content__row content__row_3">
+                            <div class="content__info">
+                                <h3 class="content__title title">Idea Generation & Foundation</h3>
+                                <p class="content__text">
+                                    Nam dapibus nisl vitae elit fringilla rutrum. Aenean sollicitudin, erat a
+                                    elementum rutrum, neque sem pretium metus, quis mollis nisl nunc et massa.
+                                    Nam dapibus nisl vitae elit fringilla rutrum. Aenean sollicitudin, erat a
+                                    elementum rutrum, neque sem pretium metus, quis mollis nisl nunc et massa
+                                </p>
+                            </div>
+                            <div class="content__image">
+                                <img src="@img/content/03.svg" alt="03" />
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="page__testimonial testimonial">
+                    <div class="testimonial__container">
+                        <h2 class="testimonial__title title">Don’t Just Take Our Words</h2>
+                        <div class="testimonial__row">
+                            <article class="testimonial__body body-testimonial">
+                                <div class="body-testimonial__top">
+                                    <div class="body-testimonial__avatar-ibg">
+                                        <img src="@img/avatar/01.png" alt="Arakat Bank" />
+                                    </div>
+                                    <div class="body-testimonial__info">
+                                        <div class="body-testimonial__name">Arakat Bank</div>
+                                        <div class="body-testimonial__company">International Bank Ltd.</div>
+                                    </div>
+                                </div>
+                                <p class="body-testimonial__text">
+                                    <span>“</span>
+                                    Fusce vehicula dolor arcu, sit amet blandit dolor mollis nec. Donec
+                                    viverra eleifend lacus, vitae ullamcorper metus. Sed sollicitudin ipsum.
+                                </p>
+                            </article>
+                            <article class="testimonial__body body-testimonial">
+                                <div class="body-testimonial__top">
+                                    <div class="body-testimonial__avatar-ibg">
+                                        <img src="@img/avatar/02.png" alt="Chrsitopher Company Ltd." />
+                                    </div>
+                                    <div class="body-testimonial__info">
+                                        <div class="body-testimonial__name">Chrsitopher Company Ltd.</div>
+                                        <div class="body-testimonial__company">Design & Development</div>
+                                    </div>
+                                </div>
+                                <p class="body-testimonial__text">
+                                    <span>“</span>
+                                    Fusce vehicula dolor arcu, sit amet blandit dolor mollis nec. Donec
+                                    viverra eleifend lacus, vitae ullamcorper metus. Sed sollicitudin ipsum.
+                                    Sed sollicitudin ipsum.Sed sollicitudin ipsum.
+                                </p>
+                            </article>
+                            <article class="testimonial__body body-testimonial">
+                                <div class="body-testimonial__top">
+                                    <div class="body-testimonial__avatar-ibg">
+                                        <img src="@img/avatar/03.png" alt="Jigsawlab Studio Inc." />
+                                    </div>
+                                    <div class="body-testimonial__info">
+                                        <div class="body-testimonial__name">Jigsawlab Studio Inc.</div>
+                                        <div class="body-testimonial__company">Interactive</div>
+                                    </div>
+                                </div>
+                                <p class="body-testimonial__text">
+                                    <span>“</span>
+                                    Fusce vehicula dolor arcu, sit amet blandit dolor mollis nec. lacus, vitae
+                                    ullamcorper metus. Sed sollicitudin ipsum.
+                                </p>
+                            </article>
+                        </div>
+                    </div>
+                    <div class="testimonial__bg-ibg">
+                        <img src="@img/bg02.jpg" alt="background" />
+                    </div>
+                </section>
+            </main>
+            @@include('html/_footer.htm',{})
+        </div>
+        @@include('html/_js.htm',{})
+    </body>
 </html>
